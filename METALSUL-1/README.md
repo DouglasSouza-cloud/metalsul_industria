@@ -1,3 +1,0 @@
-# metalsul_industria
-
-# Classes
