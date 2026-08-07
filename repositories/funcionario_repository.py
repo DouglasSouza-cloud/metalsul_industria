@@ -5,6 +5,7 @@ from models.funcionario import Funcionario
 class FuncionarioRepository:
     def __init__(self):
         self.db = Conexao()
+
     def salvar(self, funcionario):
         sql = """
                 INSERT INTO funcionario
@@ -65,8 +66,14 @@ class FuncionarioRepository:
 
 
             print("ALGO DEU ERRADO. :(")
+
     def buscar_por_id(self, id_funcionario):
-        pass
+        sql = """
+            SELECT * from funcionario
+            where id_funcionario = %s
+        """
+
+        
     def listar(self):
         pass
     def atualizar(self, funcionario):
