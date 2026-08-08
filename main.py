@@ -2,17 +2,27 @@ from datetime import date
 from models.funcionario import Funcionario
 from repositories.funcionario_repository import FuncionarioRepository
 
-
 def main():
 
     repository = FuncionarioRepository()
-    funcionario = repository.buscar_por_id(1)
 
-    if funcionario:
-        print(funcionario)
+    funcionarios = repository.listar()
+
+    if len(funcionarios) == 0:
+
+        print("Nenhum funcionário cadastrado.")
+
     else:
-        print("FUNCIONÁRIO NÃO ENCONTRADO. :(")
+
+        for funcionario in funcionarios:
+
+            print(funcionario)
+
+            print("-" * 50)
+
     repository.fechar()
 
+
 if __name__ == "__main__":
+
     main()

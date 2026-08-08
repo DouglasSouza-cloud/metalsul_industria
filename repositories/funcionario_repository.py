@@ -111,8 +111,8 @@ class FuncionarioRepository:
             return None
 
         
+
     def listar(self):
-        def listar(self):
 
             sql = """
 
